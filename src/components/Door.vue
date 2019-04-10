@@ -1,11 +1,20 @@
 <template>
     <div class="door__area">
-        <div class="door__frame">
+        <div class="door__frame" :class="{selected:selected && !open}">
             <Gift v-if="open && hasGift"/>
         </div>
-        <div class="door">
-            <div class="door__number">{{ number }}</div>
-            <div class="door__knob"></div>
+        <div 
+            class="door" 
+            @click="selected = !selected"
+            :class="{open}"
+        >
+            <div class="door__number" :class="{selected}">{{ number }}</div>
+            <div 
+                class="door__knob" 
+                :class="{selected}"
+                @click="open = true"
+            >
+            </div>
         </div>
     </div>
 </template>
@@ -33,6 +42,7 @@ export default {
 
 <style lang="scss">
     $border: 5px solid brown;
+    $selected-border: 5px solid yellow;
 
     .door {
         position: absolute;
@@ -45,6 +55,13 @@ export default {
         padding: 20px;
         align-items: center;
 
+        &.open {
+            background: #0007;
+
+            & .door__knob, & .door__number {
+                display: none;
+            }
+        }
 
         &__area{
             position: relative;
@@ -64,10 +81,16 @@ export default {
             border-left: $border;
             border-right: $border;
             border-top: $border;
-
             display: flex;
             justify-content: center;
             align-items: flex-end;
+            transition: .3s ease;
+
+            &.selected {
+                border-left: $selected-border;
+                border-right: $selected-border;
+                border-top: $selected-border;
+            }
         }
 
         &__knob {
@@ -77,7 +100,21 @@ export default {
             background: brown;
             align-self: flex-start;
             margin-top: 60px;
+            transition: .3s ease;
+
+            &.selected{
+                background: yellow;
+            }
         }
+
+        &__number {
+            transition: .3s ease;
+
+            &.selected{
+                color: yellow;
+            }
+        }
+
     }
 
 </style>
