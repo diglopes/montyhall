@@ -1,8 +1,10 @@
 import Vue from 'vue'
-import App from './App.vue'
-
-Vue.config.productionTip = false
+import App from './App'
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    // el: "#app", Ver.1
+    render: h => h(App), // Ver. 2
+    // render(createElement){
+    //     return createElement(App) Ver.1
+    // }
+}).$mount("#app") // Ver. 2
