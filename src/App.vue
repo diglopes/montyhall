@@ -1,17 +1,17 @@
 <template>
     <div id="app">
         <h1>Problema de Monty Hall</h1>
-        <Gift />
+        <Door number="1" :hasGift="false"/>
     </div>
 </template>
 
 <script>
-import Gift from './components/Gift'
+import Door from './components/Door'
 
 export default {
     name: 'App',
     components: {
-        Gift
+        Door
     }
 }
 </script>
@@ -24,7 +24,7 @@ export default {
 
     body {
         color: #fff;
-        background-image: radial-gradient( circle 848px at 3.8% 67.2%,  rgba(44,45,45,1) 0%, rgba(16,20,18,1) 90.1% );
+        background: #7B8E10;
     }
 
     #app {
