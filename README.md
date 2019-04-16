@@ -2,7 +2,7 @@
 
 ---
 
-[![Imagem do projeto](./src/image/montyhall_md.gif)]
+![Imagem do projeto](./src/image/montyhall_md.gif)
 >Este projeto foi criado a partir do mini curso de Vue disponibilizado no Youtube pela [COD3R Cursos](https://www.cod3r.com.br/portal).
 ---
 
